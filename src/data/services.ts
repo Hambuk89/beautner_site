@@ -6,7 +6,6 @@ export const services = [
     duration: "XX mins",
     price: "$XX",
   },
-
   {
     title: "Facial Massage",
     description:
@@ -14,7 +13,6 @@ export const services = [
     duration: "XX mins",
     price: "$XX",
   },
-
   {
     title: "Aqua Drop Facial",
     description:
@@ -22,7 +20,6 @@ export const services = [
     duration: "XX mins",
     price: "$XX",
   },
-
   {
     title: "Aqua Drop EGF",
     description:
@@ -30,7 +27,6 @@ export const services = [
     duration: "XX mins",
     price: "$XX",
   },
-
   {
     title: "Microneedling",
     description:
@@ -38,7 +34,6 @@ export const services = [
     duration: "XX mins",
     price: "$XX",
   },
-
   {
     title: "Dermaplaning",
     description:
@@ -46,11 +41,34 @@ export const services = [
     duration: "XX mins",
     price: "$XX",
   },
-
   {
     title: "LED Therapy",
     description:
       "Light-based therapy designed to support skin recovery and skin health.",
+    duration: "XX mins",
+    price: "$XX",
+  },
+];
+
+export const addOns = [
+  {
+    title: "Acne Care Mask",
+    description:
+      "A targeted mask treatment designed to provide gentle care for acne-prone and congested skin.",
+    duration: "XX mins",
+    price: "$XX",
+  },
+  {
+    title: "Modeling Mask",
+    description:
+      "A soothing mask treatment that helps refresh, hydrate, and leave the skin feeling soft and comfortable.",
+    duration: "XX mins",
+    price: "$XX",
+  },
+  {
+    title: "Plaster Mask",
+    description:
+      "A professional finishing mask designed to provide a relaxing and refreshing final step to your treatment.",
     duration: "XX mins",
     price: "$XX",
   },
