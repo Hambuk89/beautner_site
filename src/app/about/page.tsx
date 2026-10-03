@@ -1,7 +1,14 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+
+export const metadata: Metadata = {
+  title: "About Beautner",
+  description:
+    "Learn more about Beautner, a facial studio in Albany, Auckland, focused on personalised skincare, professional facial care, and a relaxing experience.",
+};
 
 export default function AboutPage() {
   return (
@@ -200,7 +207,7 @@ export default function AboutPage() {
           </div>
         </section>
       </main>
-      <Footer/>
+      <Footer />
     </>
   );
 }

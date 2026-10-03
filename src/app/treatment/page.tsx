@@ -45,8 +45,9 @@ export default function TreatmentPage() {
 
             <div className="grid gap-5 md:grid-cols-2">
               {services.map((service, index) => (
-                <article
+                <Link
                   key={service.title}
+                  href={`/treatment/${service.slug}`}
                   className="group flex flex-col justify-between border border-[#EAE3DD] bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:p-9"
                 >
                   <div>
@@ -83,7 +84,7 @@ export default function TreatmentPage() {
                       {service.price}
                     </span>
                   </div>
-                </article>
+                </Link>
               ))}
             </div>
           </div>
@@ -109,8 +110,9 @@ export default function TreatmentPage() {
 
             <div className="mt-12 grid gap-5 md:grid-cols-3">
               {addOns.map((addOn) => (
-                <article
+                <Link
                   key={addOn.title}
+                  href={`/treatment/${addOn.slug}`}
                   className="group flex min-h-[300px] flex-col justify-between border border-[#FAF8F5] bg-[#FAF8F5] p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
                 >
                   <div>
@@ -145,7 +147,7 @@ export default function TreatmentPage() {
                       {addOn.price}
                     </span>
                   </div>
-                </article>
+                </Link>
               ))}
             </div>
           </div>
@@ -176,7 +178,8 @@ export default function TreatmentPage() {
           </div>
         </section>
       </main>
-      <Footer/>
+
+      <Footer />
     </>
   );
 }
