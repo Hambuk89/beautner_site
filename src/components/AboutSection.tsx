@@ -3,9 +3,9 @@ import Link from "next/link";
 
 export default function AboutSection() {
   return (
-    <section className="bg-[#FAF8F5] py-24 sm:py-28 lg:py-32">
+    <section className="bg-[#FAF8F5] py-24 sm:py-28 lg:py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-20">
           {/* Image */}
           <div className="relative overflow-hidden bg-[#EAE3DD]">
             <Image
@@ -23,7 +23,7 @@ export default function AboutSection() {
               Our Skincare Partner
             </p>
 
-            <h2 className="mt-4 font-[var(--font-playfair)] text-4xl leading-tight text-[#2C2C2C] sm:text-5xl">
+            <h2 className="mt-4 font-[var(--font-playfair)] text-4xl leading-tight text-[#2C2C2C] sm:text-5xl lg:text-6xl">
               ECLADO
             </h2>
 

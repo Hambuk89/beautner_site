@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function ContactCTA() {
   return (
-    <section className="bg-[#EAE3DD] px-6 py-24 sm:py-28 lg:px-8 lg:py-32">
+    <section className="bg-[#EAE3DD] px-6 py-24 sm:py-28 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-4xl text-center">
         <p className="text-sm font-medium uppercase tracking-[0.25em] text-[#C8B6A6]">
           Your Skin, Your Ritual

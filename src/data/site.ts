@@ -4,5 +4,5 @@ export const siteConfig = {
   instagram: "@beautner_nz",
   wechat: "beautner_nz",
   kakao: "beautner_nz",
-  location: "Albany, Auckland",
+  location: "13 Spencer Road, Oteha, Auckland",
 };

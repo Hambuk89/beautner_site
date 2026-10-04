@@ -184,17 +184,17 @@ export default function AboutPage() {
         </section>
 
         {/* CTA */}
-        <section className="bg-[#2C2C2C] px-6 py-20 text-center sm:py-24 lg:px-8">
+        <section className="bg-[#EAE3DD] px-6 py-24 sm:py-28 lg:px-8 lg:py-24">
           <div className="mx-auto max-w-3xl">
             <p className="text-sm font-medium uppercase tracking-[0.25em] text-[#C8B6A6]">
               Your Skin, Your Ritual
             </p>
 
-            <h2 className="mt-4 font-[var(--font-playfair)] text-4xl text-white sm:text-5xl">
+            <h2 className="mt-4 font-[var(--font-playfair)] text-4xl text-[#2C2C2C] sm:text-5xl">
               Take a Moment for Yourself
             </h2>
 
-            <p className="mx-auto mt-6 max-w-xl text-base leading-7 text-white/70">
+            <p className="mx-auto mt-6 max-w-xl text-base leading-7 text-[#2C2C2C]/65">
               Discover a personalised facial experience at Beautner.
             </p>
 

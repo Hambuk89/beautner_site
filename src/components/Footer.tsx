@@ -28,7 +28,7 @@ export default function Footer() {
                   alt="Beautner"
                   width={120}
                   height={50}
-                  className="h-auto w-[100px] object-contain"
+                  className="h-auto w-[110px] object-contain"
                 />
               </Link>
 
@@ -87,6 +87,28 @@ export default function Footer() {
                   </span>
                 </a>
 
+                {/* Location */}
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                    siteConfig.location
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-3"
+                >
+                  <Image
+                    src="/icons/map-pin-icon.png"
+                    alt="Location"
+                    width={20}
+                    height={20}
+                    className="h-5 w-5 object-contain"
+                  />
+
+                  <span className="text-sm text-[#2C2C2C]/70 transition-colors duration-300 group-hover:text-[#2C2C2C]">
+                    {siteConfig.location}
+                  </span>
+                </a>
+
                 {/* Instagram */}
                 <a
                   href="https://www.instagram.com/beautner_nz"
@@ -135,22 +157,7 @@ export default function Footer() {
                   <span className="text-sm text-[#2C2C2C]/70">
                     {siteConfig.kakao}
                   </span>
-                </div>
-
-                {/* Location */}
-                <div className="flex items-center gap-3">
-                  <Image
-                    src="/icons/map-pin-icon.png"
-                    alt="Location"
-                    width={20}
-                    height={20}
-                    className="h-5 w-5 object-contain"
-                  />
-
-                  <span className="text-sm text-[#2C2C2C]/70">
-                    {siteConfig.location}
-                  </span>
-                </div>
+                </div>              
               </div>
             </div>
           </div>

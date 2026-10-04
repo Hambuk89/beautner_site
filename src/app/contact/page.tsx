@@ -1,22 +1,18 @@
-"use client";
-
-import { useState, type FormEvent } from "react";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import ContactForm from "./ContactForm";
 import Navbar from "@/components/Navbar";
 import { siteConfig } from "@/data/site";
-import { addOns, services } from "@/data/services";
 import Footer from "@/components/Footer";
 
+export const metadata: Metadata = {
+  title: "Contact Beautner | Book Your Facial Treatment",
+  description:
+    "Contact Beautner in Albany, Auckland to enquire about facial and skincare treatments or book a personalised treatment for your skin.",
+};
+
 export default function ContactPage() {
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setIsSubmitted(true);
-  };
-
-  const treatmentOptions = [...services, ...addOns];
 
   return (
     <>
@@ -93,26 +89,32 @@ export default function ContactPage() {
 
                 {/* Location */}
                 <div className="flex items-center gap-4">
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#EAE3DD]">
-                        <Image
-                        src="/icons/map-pin-icon.png"
-                        alt="Location"
-                        width={22}
-                        height={22}
-                        className="h-[22px] w-[22px] object-contain"/>
-                    </div>
-                    <div>
-                    <p className="text-xs uppercase tracking-[0.15em] text-[#C8B6A6]">
-                        Location    
-                    </p>
-
-                    
-                    <p className="mt-1 text-sm text-[#2C2C2C]/75">
-                        {siteConfig.location}
-                    </p>
-                    </div>
-                </div>
-
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#EAE3DD]">
+                    <Image
+                      src="/icons/map-pin-icon.png"
+                      alt="Location"
+                      width={22}
+                      height={22}
+                      className="h-[22px] w-[22px] object-contain"
+                    />
+                  </div>
+                  <div>
+                  <p className="text-xs uppercase tracking-[0.15em] text-[#C8B6A6]">
+                    Location
+                  </p>
+                  <a
+                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                      siteConfig.location
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-1 block text-sm text-[#2C2C2C]/75 transition-colors hover:text-[#C8B6A6]"
+                  >
+                    {siteConfig.location}
+                  </a>
+                  </div>
+                </div> 
+              
                 {/* Instagram */}
                 <a
                   href="https://www.instagram.com/beautner_nz"
@@ -185,206 +187,22 @@ export default function ContactPage() {
                 </div>
               </div>
             </div>
-
-            {/* Contact Form */}
-            <div className="border border-[#EAE3DD] bg-white p-7 sm:p-10 lg:p-12">
-              {!isSubmitted ? (
-                <>
-                  <div>
-                    <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#C8B6A6]">
-                      Enquiry Form
-                    </p>
-
-                    <h2 className="mt-3 font-[var(--font-playfair)] text-3xl text-[#2C2C2C] sm:text-4xl">
-                      Make an Enquiry
-                    </h2>
-                  </div>
-
-                  <form
-                    onSubmit={handleSubmit}
-                    className="mt-10 space-y-6"
-                  >
-                    {/* Name */}
-                    <div>
-                      <label
-                        htmlFor="name"
-                        className="mb-2 block text-sm font-medium text-[#2C2C2C]"
-                      >
-                        Name
-                      </label>
-
-                      <input
-                        id="name"
-                        name="name"
-                        type="text"
-                        required
-                        placeholder="Your name"
-                        className="w-full border border-[#EAE3DD] bg-[#FAF8F5] px-4 py-3.5 text-sm text-[#2C2C2C] outline-none transition-colors placeholder:text-[#2C2C2C]/40 focus:border-[#C8B6A6]"
-                      />
-                    </div>
-
-                    {/* Email */}
-                    <div>
-                      <label
-                        htmlFor="email"
-                        className="mb-2 block text-sm font-medium text-[#2C2C2C]"
-                      >
-                        Email
-                      </label>
-
-                      <input
-                        id="email"
-                        name="email"
-                        type="email"
-                        required
-                        placeholder="Your email address"
-                        className="w-full border border-[#EAE3DD] bg-[#FAF8F5] px-4 py-3.5 text-sm text-[#2C2C2C] outline-none transition-colors placeholder:text-[#2C2C2C]/40 focus:border-[#C8B6A6]"
-                      />
-                    </div>
-
-                    {/* Treatment */}
-                    <div>
-                      <label
-                        htmlFor="treatment"
-                        className="mb-2 block text-sm font-medium text-[#2C2C2C]"
-                      >
-                        Treatment
-                      </label>
-
-                      <select
-                        id="treatment"
-                        name="treatment"
-                        required
-                        defaultValue=""
-                        className="w-full border border-[#EAE3DD] bg-[#FAF8F5] px-4 py-3.5 text-sm text-[#2C2C2C] outline-none transition-colors focus:border-[#C8B6A6]"
-                      >
-                        <option value="" disabled>
-                          Select a treatment
-                        </option>
-
-                        {treatmentOptions.map((treatment) => (
-                          <option
-                            key={treatment.title}
-                            value={treatment.title}
-                          >
-                            {treatment.title}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-
-                    {/* Date + Time */}
-                    <div className="grid gap-6 sm:grid-cols-2">
-                        <div>
-                            <label htmlFor="date" className="mb-2 block text-sm font-medium text-[#2C2C2C]">Preferred Date</label>
-                            <input 
-                                id="date"
-                                name="date"
-                                type="date"
-                                required
-                                lang="en-NZ"
-                                className="w-full border border-[#EAE3DD] bg-[#FAF8F5] px-4 py-3.5 text-sm text-[#2C2C2C] outline-none transition-colors focus:border-[#C8B6A6]"
-                            />
-                            <p className="mt-2 text-xs text-[#2C2C2C]/45">
-                                Please select your preferred date.
-                            </p>
-                        </div>
-
-                        <div>
-                            <label
-                                htmlFor="time"
-                                className="mb-2 block text-sm font-medium text-[#2C2C2C]"
-                            >
-                                Preferred Time
-                            </label>
-
-                            <input
-                                id="time"
-                                name="time"
-                                type="time"
-                                required
-                                lang="en-NZ"
-                                className="w-full border border-[#EAE3DD] bg-[#FAF8F5] px-4 py-3.5 text-sm text-[#2C2C2C] outline-none transition-colors focus:border-[#C8B6A6]"
-                            />
-
-                            <p className="mt-2 text-xs text-[#2C2C2C]/45">
-                                New Zealand time (NZST / NZDT).
-                            </p>
-                        </div>
-                    </div>
-
-                    {/* Message */}
-                    <div>
-                      <label
-                        htmlFor="message"
-                        className="mb-2 block text-sm font-medium text-[#2C2C2C]"
-                      >
-                        Message
-                      </label>
-
-                      <textarea
-                        id="message"
-                        name="message"
-                        rows={5}
-                        placeholder="Tell us how we can help..."
-                        className="w-full resize-none border border-[#EAE3DD] bg-[#FAF8F5] px-4 py-3.5 text-sm text-[#2C2C2C] outline-none transition-colors placeholder:text-[#2C2C2C]/40 focus:border-[#C8B6A6]"
-                      />
-                    </div>
-
-                    <button
-                      type="submit"
-                      className="w-full rounded-full bg-[#C8B6A6] px-7 py-4 text-sm font-medium tracking-wide text-white transition-all duration-300 hover:bg-[#b8a595] hover:shadow-lg"
-                    >
-                      Send Enquiry
-                    </button>
-                  </form>
-                </>
-              ) : (
-                <div className="flex min-h-[500px] flex-col items-center justify-center text-center">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#EAE3DD]">
-                    <span className="text-2xl text-[#C8B6A6]">✓</span>
-                  </div>
-
-                  <p className="mt-7 text-sm font-medium uppercase tracking-[0.2em] text-[#C8B6A6]">
-                    Thank You
-                  </p>
-
-                  <h2 className="mt-4 font-[var(--font-playfair)] text-4xl text-[#2C2C2C] sm:text-5xl">
-                    Your Enquiry
-                    <br />
-                    Has Been Sent
-                  </h2>
-
-                  <p className="mt-6 max-w-md text-sm leading-7 text-[#2C2C2C]/65">
-                    Thank you for contacting Beautner. We will get back to you
-                    as soon as possible.
-                  </p>
-
-                  <button
-                    type="button"
-                    onClick={() => setIsSubmitted(false)}
-                    className="mt-8 rounded-full border border-[#C8B6A6] px-7 py-3.5 text-sm font-medium tracking-wide text-[#2C2C2C] transition-all duration-300 hover:bg-[#C8B6A6] hover:text-white"
-                  >
-                    Send Another Enquiry
-                  </button>
-                </div>
-              )}
-            </div>
+            <ContactForm />
           </div>
         </section>
 
         {/* Final CTA */}
-        <section className="bg-[#2C2C2C] px-6 py-20 text-center sm:py-24 lg:px-8">
+        <section className="bg-[#EAE3DD] px-6 py-24 sm:py-28 lg:px-8 lg:py-24">
           <div className="mx-auto max-w-3xl">
             <p className="text-sm font-medium uppercase tracking-[0.25em] text-[#C8B6A6]">
               Your Skin, Your Ritual
             </p>
 
-            <h2 className="mt-4 font-[var(--font-playfair)] text-4xl leading-tight text-white sm:text-5xl">
+            <h2 className="mt-4 font-[var(--font-playfair)] text-4xl leading-tight text-[#2C2C2C] sm:text-5xl">
               Take Time for Yourself
             </h2>
 
-            <p className="mx-auto mt-6 max-w-xl text-base leading-7 text-white/70">
+            <p className="mx-auto mt-6 max-w-xl text-base leading-7 text-[#2C2C2C]/65">
               A calm space, thoughtful skincare, and a treatment designed
               around you.
             </p>
