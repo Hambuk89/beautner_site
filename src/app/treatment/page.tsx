@@ -4,6 +4,7 @@ import { ArrowUpRight, Clock } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { addOns, services } from "@/data/services";
 import Footer from "@/components/Footer";
+import ContactCTA from "@/components/ContactCTA";
 
 export const metadata: Metadata = {
   title: "Facial Treatments in Albany, Auckland",
@@ -161,29 +162,13 @@ export default function TreatmentPage() {
         </section>
 
         {/* Booking CTA */}
-        <section className="bg-[#EAE3DD] px-6 py-24 sm:py-28 lg:px-8 lg:py-24">
-          <div className="mx-auto max-w-3xl">
-            <p className="text-sm font-medium uppercase tracking-[0.25em] text-[#C8B6A6]">
-              Begin Your Ritual
-            </p>
-
-            <h2 className="mt-4 font-[var(--font-playfair)] text-4xl leading-tight text-[#2C2C2C] sm:text-5xl">
-              Ready to Take Time for Your Skin?
-            </h2>
-
-            <p className="mx-auto mt-6 max-w-xl text-base leading-7 text-[#2C2C2C]/65">
-              Get in touch with Beautner to find a treatment that suits your
-              skin and your needs.
-            </p>
-
-            <Link
-              href="/contact"
-              className="mt-8 inline-flex rounded-full bg-[#C8B6A6] px-8 py-3.5 text-sm font-medium tracking-wide text-white transition-all duration-300 hover:bg-[#b8a595] hover:shadow-lg"
-            >
-              Book Your Treatment
-            </Link>
-          </div>
-        </section>
+        <ContactCTA
+          eyebrow="Begin Your Ritual"
+          title="Ready to Take Time for Your Skin?"
+          description="Get in touch with Beautner to find a treatment that suits your skin and your needs."
+          buttonText="Book Your Treatment"
+          href="/contact"
+        />
       </main>
 
       <Footer />

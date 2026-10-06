@@ -21,7 +21,19 @@ export default function Home() {
         <Hero />
         <AboutSection />
         <FeaturedServices />
-        <ContactCTA />
+        <ContactCTA
+          eyebrow="Your Skin, Your Ritual"
+          title={
+            <>
+              Take a Moment
+              <br />
+              for Yourself
+            </>
+          }
+          description="Discover a personalised facial experience designed around your skin, your needs, and your time."
+          buttonText="Book Your Treatment"
+          href="/contact"
+        />
       </main>
 
       <Footer />
